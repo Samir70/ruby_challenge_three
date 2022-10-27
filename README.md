@@ -5,7 +5,7 @@ _Coaching this? Read the coach guidance
 
 ## Learning objectives
 
-In this section, you'll learn how to write programs using Ruby which will, necessarily, involve learning Ruby's syntax. Along the way, you'll also learn about [problem decomposition](./pills/problem_decomposition.md), [debugging](./pills/debugging.md) and [experimenting in IRB](./pills/irb.md).
+In this section, you'll learn how to write programs using Ruby which will, necessarily, involve learning Ruby's syntax. Along the way, you'll also learn about [problem decomposition](./pills/problem_decomposition.md), [debugging](./pills/debugging.md), [peer code review](./PEER_REVIEW.md) and [experimenting in IRB](./pills/irb.md).
 
 #### By the end of the module, you will be able to
 
@@ -36,11 +36,19 @@ To help your coach provide the right support, at the right time, please **log yo
 These challenges are really tightly focused and repetitive. The goal is to become familiar with the basic building blocks of programming.
 
 > You'll be asked to zip up and share your solutions to these exercises so that your coach can see what you're learning and what you need to focus on next.
+
 ### Programs
 
 These challenges require you to bring those basic building blocks together and build a useful program.
 
 > You'll be asked to do a screen recording when working on this challenge so that your coaches can see what you're learning and what you need to focus on next.
+
+### Peer Code Review
+
+Upon submission of your various programming tasks in this module, your technical coach will pair you up with someone who will review your code. Work with this colleague, until you are both happy that the submission is adequate at which point you can merge the branch and close the Pull Request.
+
+You can navigate [here](./PEER_REVIEW.md) to view the Peer Review Overview.
+
 ## Chapters
 
 1. [Password Validator](./chapter1/README.md)

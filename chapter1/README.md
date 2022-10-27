@@ -12,6 +12,7 @@ In this chapter, you'll work towards 6 of the module's 10 learning objectives.
 - Describe and use hashes
 - Describe and use methods :point_left:
 - Describe and use classes
+- Begin to use code review to analyse and assess good coding practices.
 
 ## The Big Picture
 

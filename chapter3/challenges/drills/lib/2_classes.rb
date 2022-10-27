@@ -45,6 +45,22 @@
 # Takes one string as an arg (a name)
 # Returns 'Goodmorning, Alex', if the arg is 'Alex'
 
+# Basket
+# add
+# takes one argument of any type
+# adds it to the list of items
+# items
+# returns everything that has been added to the basket
+
+# Basket2
+# add
+# takes two arguments: a string for the item and a number for the amount of that item
+# adds both pieces of information to a list of items
+# contents
+# returns everything that has been added to the basket
+# eg: after having added "carrots", 3
+# contents returns [{"item" => "carrots", "amount" => 3}]
+
 # Calculator
 # add
 # takes two numbers as args
@@ -63,14 +79,9 @@
 # returns the result
 # history
 # takes no args
-# returns the results of all previous calculations
-
-# Basket
-# add
-# takes one argument of any type
-# adds it to the list of items
-# items
-# returns everything that has been added to the basket
+# returns an array containing hashes of the operation, arguments and results of all previous calculations
+# eg: after multiplying 4 and 6, the history is 
+# [{"operation" => "multiply", "arguments" => [4, 6], "result" => 24}]
 
 # Cohort
 # add_student

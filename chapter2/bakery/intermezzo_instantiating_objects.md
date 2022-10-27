@@ -158,9 +158,10 @@ The next exercise requires you to either copy, or clone the Bakery 2.rb file.
 
 You must load the 'bakery_2.rb' file into irb, and do your best to satisfy the orders being placed at your Cake Bakery!
 
-You can find a link to it [here](slug/materials/universe/foundations/ruby/chapter2/bakery/bakery_2.rb).
+You can find a link to it [here](./lib/bakery_2.rb).
 
 ** To Be Continued **
+
 
 <!-- BEGIN GENERATED SECTION DO NOT EDIT -->
 

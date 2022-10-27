@@ -8,7 +8,9 @@ Well done for reaching the chapter 1 challenges! Here, you'll find two types of 
 
 To get the exercises onto your machine, you'll need to fork and then clone this repo.
 
-If you're not sure how to do that, watch [this short video](https://youtu.be/QWV5-UNNSLI).
+If you're not sure how to do that, watch [this short video](https://www.youtube.com/watch?v=QWV5-UNNSLI) and substitute `python_foundations` instead of `ruby_foundations`.
+
+/** @TASK — Create a general or Python-specific video **/
 
 ### Installing Dependencies
 
@@ -120,8 +122,42 @@ Each of these can be further broken down...
 4. Keep going until all the tests pass
 
 ## Submitting Your Work
+You will need to push your changes to your repo in order for it to be reviewed.
 
-Use [this form](https://airtable.com/shr6mk28x0fy3OrxN?prefill_Item=rubyf_ch1) to submit your code and screen recording
+**You must make a new public repo on GitHub!** 
+
+Call it something like "**ruby_challenge_one**". Make sure it is set to public
+
+Use [this form](https://airtable.com/shr6mk28x0fy3OrxN?prefill_Item=rubyf_ch1) to submit your code and screen recording, and GitHub repo.
+
+Then add this destination repo to your remote path using Git:
+
+    
+    git add remote review_repo https://github.com/<your profile name>/ruby_challenge_one.git
+    
+
+You must make a new branch in order for your Peer to be able to leave comments on. It will look something like this:
+
+
+    git branch peer_review_branch
+    git switch peer_review_branch
+    git add .
+    git commit -m 'ready to be reviewed'
+    git push -u review_repo peer_review_branch
+
+Once you navigate to your GitHub repo, head to Pull Requests. This is where you can make a new Pull Request that compares `peer_review_branch` to `main`.
+
+You must send the link to this new Pull Request.
+
+Your Peer will leave comments on the Pull Request.
+
+### Peer Code Review
+
+Upon submission of the initial programming task in Chapter 1, your technical coach will pair you up with someone who will review your code. Work with this colleague, until you are both happy that the submission is adequate at which point you can merge the branch and close the Pull Request.
+
+You can return [here](https://github.com/makersacademy/ruby_foundations/blob/main/PEER_REVIEW.md) to view the Peer Review Overview.
+
+You can find the Peer Review checklist [here](./program/CHECKLIST.md)
 
 ## What Next?
 

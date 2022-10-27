@@ -44,7 +44,7 @@ RSpec.describe 'classes' do
         greeter = Greeter.new
         expect(greeter.goodmorning('Jo')).to eq 'Goodmorning, Jo'
       end
-
+      
       it 'given "Tina" returns "Goodmorning, Tina"' do
         greeter = Greeter.new
         expect(greeter.goodmorning('Tina')).to eq 'Goodmorning, Tina'
@@ -52,6 +52,51 @@ RSpec.describe 'classes' do
     end
   end
 
+  describe 'Basket' do
+    subject { Basket.new }
+
+    describe 'add' do
+      it 'used three times, adds three items to the list' do
+        subject.add('eggs')
+        subject.add('milk')
+        subject.add('bread')
+        expect(subject.items).to eq ['eggs', 'milk', 'bread']
+      end
+
+      it 'used two times, adds two items to the list' do
+        subject.add('eggs')
+        subject.add('milk')
+        expect(subject.items).to eq ['eggs', 'milk']
+      end
+    end
+  end
+  
+  describe 'Basket2' do
+    subject { Basket2.new }
+
+    describe 'add' do
+      it 'used three times, adds three items to the list' do
+        subject.add('eggs', 12)
+        subject.add('milk', 1)
+        subject.add('bread', 1)
+        expect(subject.contents).to eq [
+          {"item" => 'eggs', "amount" => 12},
+          {"item" => 'milk', "amount" => 1},
+          {"item" => 'bread', "amount" => 1},
+        ]
+      end
+      
+      it 'used two times, adds two items to the list' do
+        subject.add('eggs', 6)
+        subject.add('milk', 2)
+        expect(subject.contents).to eq [
+          {"item" => 'eggs', "amount" => 6},
+          {"item" => 'milk', "amount" => 2},
+        ]
+      end
+    end
+  end
+  
   describe 'Calculator' do
     describe 'add' do
       it 'given 5 and 5, returns 10' do
@@ -104,27 +149,30 @@ RSpec.describe 'classes' do
         calculator = Calculator.new
         expect(calculator.divide(10,2)).to eq 5
       end
+    end  
+    
+    describe 'history' do
+      it 'when used to add then multiply, returns an array of hashes with these events' do
+        calculator = Calculator.new
+        calculator.add(5, 6)
+        calculator.multiply(3, 8)
+        expect(calculator.history).to eq [
+          {"operation" => "add", "arguments" => [5, 6], "result" => 11},
+          {"operation" => "multiply", "arguments" => [3, 8], "result" => 24}
+        ]
+      end
+      it 'when used to subtract then divide, returns an array of hashes with these events' do
+        calculator = Calculator.new
+        calculator.subtract(20, 3)
+        calculator.divide(28, 4)
+        expect(calculator.history).to eq [
+          {"operation" => "subtract", "arguments" => [20, 3], "result" => 17},
+          {"operation" => "divide", "arguments" => [28, 4], "result" => 7}
+        ]
+      end
     end    
   end
 
-  describe 'Basket' do
-    subject { Basket.new }
-
-    describe 'add' do
-      it 'used three times, adds three items to the list' do
-        subject.add('eggs')
-        subject.add('milk')
-        subject.add('bread')
-        expect(subject.items).to eq ['eggs', 'milk', 'bread']
-      end
-
-      it 'used two times, adds two items to the list' do
-        subject.add('eggs')
-        subject.add('milk')
-        expect(subject.items).to eq ['eggs', 'milk']
-      end
-    end
-  end
 
   describe 'Cohort' do
 
