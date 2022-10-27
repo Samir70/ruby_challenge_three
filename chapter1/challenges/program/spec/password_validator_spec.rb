@@ -43,6 +43,9 @@ RSpec.describe("password validation") do
       it("returns true when the password contains eight characters including '!'") do
         expect(valid?("1234567!")).to eq(true)
       end
+      it("returns true when the password contains eight characters including '!' at start") do
+        expect(valid?("!1234567")).to eq(true)
+      end
 
       it("returns true when the password contains eight characters including '@'") do
         expect(valid?("1234567@")).to eq(true)
