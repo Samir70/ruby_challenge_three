@@ -44,6 +44,23 @@
 # goodmorning
 # Takes one string as an arg (a name)
 # Returns 'Goodmorning, Alex', if the arg is 'Alex'
+class Greeter
+  def hello(name)
+    return "Hello, " + name
+  end
+
+  def goodbye(name)
+    return "Goodbye, " + name
+  end
+
+  def goodnight(name)
+    return "Goodnight, " + name
+  end
+
+  def goodmorning(name)
+    return "Goodmorning, " + name
+  end
+end
 
 # Basket
 # add
@@ -51,6 +68,19 @@
 # adds it to the list of items
 # items
 # returns everything that has been added to the basket
+class Basket
+  def initialize
+    @items = []
+  end
+
+  def add(item)
+    @items << item
+  end
+
+  def items
+    return @items
+  end
+end
 
 # Basket2
 # add
@@ -60,6 +90,19 @@
 # returns everything that has been added to the basket
 # eg: after having added "carrots", 3
 # contents returns [{"item" => "carrots", "amount" => 3}]
+class Basket2
+  def initialize
+    @items = []
+  end
+
+  def add(item, amount)
+    @items << { "item" => item, "amount" => amount }
+  end
+
+  def contents
+    @items
+  end
+end
 
 # Calculator
 # add
@@ -80,8 +123,37 @@
 # history
 # takes no args
 # returns an array containing hashes of the operation, arguments and results of all previous calculations
-# eg: after multiplying 4 and 6, the history is 
+# eg: after multiplying 4 and 6, the history is
 # [{"operation" => "multiply", "arguments" => [4, 6], "result" => 24}]
+class Calculator
+  def initialize
+    @history = []
+  end
+
+  def add(num1, num2)
+    @history << { "operation" => "add", "arguments" => [num1, num2], "result" => num1 + num2 }
+    return num1 + num2
+  end
+
+  def multiply(num1, num2)
+    @history << { "operation" => "multiply", "arguments" => [num1, num2], "result" => num1 * num2 }
+    return num1 * num2
+  end
+
+  def subtract(num1, num2)
+    @history << { "operation" => "subtract", "arguments" => [num1, num2], "result" => num1 - num2 }
+    return num1 - num2
+  end
+
+  def divide(num1, num2)
+    @history << { "operation" => "divide", "arguments" => [num1, num2], "result" => num1 / num2 }
+    return num1 / num2
+  end
+
+  def history
+    return @history
+  end
+end
 
 # Cohort
 # add_student
@@ -94,20 +166,37 @@
 # takes one string, the name of an employer, as an arg.
 # E.g. 'NASA'
 # returns only the students who work for that employer
+class Cohort
+  def initialize
+    @students = []
+  end
+
+  def add_student(h)
+    @students << h
+  end
+
+  def students
+    return @students
+  end
+
+  def employed_by(emp)
+    return @students.filter { |s| s["employer"] == emp }
+  end
+end
 
 # Person
 # is initialized with a complex hash, for example...
 {
-  'name' => 'alex',
-  'pets' => [
-    {'name' => 'arthur', 'animal' => 'cat'},
-    {'name' => 'judith', 'animal' => 'dog'},
-    {'name' => 'gwen', 'animal' => 'goldfish'}
+  "name" => "alex",
+  "pets" => [
+    { "name" => "arthur", "animal" => "cat" },
+    { "name" => "judith", "animal" => "dog" },
+    { "name" => "gwen", "animal" => "goldfish" },
   ],
-  'addresses' => [
-    {'name' => 'work', 'building' => '50', 'street' => 'Commercial Street'},
-    {'name' => 'home', 'building' => '10', 'street' => 'South Street'}
-  ]
+  "addresses" => [
+    { "name" => "work", "building" => "50", "street" => "Commercial Street" },
+    { "name" => "home", "building" => "10", "street" => "South Street" },
+  ],
 }
 
 # work_address
@@ -121,6 +210,27 @@
 # pets
 # takes no args
 # returns a nice summary of the person's pets
+class Person
+  def initialize(h)
+    @details = h
+  end
+
+  def work_address
+    add = @details["addresses"].filter { |address| address["name"] == "work" }[0]
+    return add["building"] + " " + add["street"]
+  end
+
+  def home_address
+    add = @details["addresses"].filter { |address| address["name"] == "home" }[0]
+    return add["building"] + " " + add["street"]
+  end
+
+  def pets
+    out = "#{@details["name"]} has #{@details["pets"].length} pets\n"
+    @details["pets"].each { |pet| out += "- a #{pet["animal"]} called #{pet["name"]}\n" }
+    return out
+  end
+end
 
 # E.g.
 # Alex has 3 pets
