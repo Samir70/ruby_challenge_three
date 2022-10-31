@@ -1,4 +1,5 @@
-require 'date'
+require "date"
+
 class PasswordManager2
   def initialize
     @manager = []
@@ -16,7 +17,12 @@ class PasswordManager2
     elsif @used_services.include?(service)
       return "ERROR: Service names must be unique"
     else
-      @manager << { "service" => service, "password" => password, "added_on" => Date.today }
+      new_entry = {
+        "service" => service,
+        "password" => password,
+        "added_on" => Date.today,
+      }
+      @manager << new_entry
       @used_passwords << password
       @used_services << service
     end
@@ -39,15 +45,14 @@ class PasswordManager2
   def sort_by(attribute)
     # Takes one string, either "service" or "added_on", as an argument
     # Returns the list of services sorted by "service" or "added_on"
-    @manager.sort_by! { |el| el[attribute]}
+    @manager.sort_by! { |el| el[attribute] }
     return services
   end
 
   def password_for(service)
     # Takes one string, the service, as an argument
     # Returns the password for that service
-    index = @manager.index { |el| el["service"] == service }
-    return @manager[index]["password"]
+    return @manager.find { |el| el["service"] == service }["password"]
   end
 
   def update(service, new_pass)
